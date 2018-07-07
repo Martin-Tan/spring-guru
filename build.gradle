@@ -28,4 +28,6 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
 	compile('org.springframework.boot:spring-boot-starter-web')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
+	// https://mvnrepository.com/artifact/guru.springframework/chuck-norris-for-actuator
+	compile group: 'guru.springframework', name: 'chuck-norris-for-actuator', version: '0.0.2'
 }
