@@ -18,3 +18,16 @@
 - Setter Injection
 - Property Injection
 
+**Spring Bean Scope**
+
+- Singleton
+- Prototype
+- Request
+- Session
+- Global-session
+- Application
+- WebSocket
+- Custom Scope
+
+
+
