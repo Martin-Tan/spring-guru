@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import io.github.nebubit.guru.services.JokeService;
 import io.github.nebubit.guru.models.User;
 import io.github.nebubit.guru.repositories.UserRepository;
+import io.github.nebubit.guru.exceptions.UserNotFoundException;
 
 @RestController
 @RequestMapping("user")
@@ -30,5 +31,14 @@ public class UserController {
     @GetMapping
     public List<User> getAllUsers () {
         return userRepository.findAll();
+    }
+
+    @GetMapping("/{userId}")
+    public User getUser (@PathVariable Long userId) {
+        return userRepository
+               .findById(userId)
+               // https://bugs.openjdk.java.net/browse/JDK-8054569, 
+               // <UserNotFoundException>orElseThrow
+               .<UserNotFoundException>orElseThrow(() -> new UserNotFoundException(userId));
     }
 }
