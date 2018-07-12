@@ -1,0 +1,12 @@
+spring:
+  h2: # jdbc:h2:mem:testdb
+    console:
+      enabled: false
+      path: /h2-console
+  jpa: # MySQL configuration
+    hibernate:
+      ddl-auto: none
+  datasource:
+    url: jdbc:mysql://localhost:3306/your_database_name
+    username: username
+    password: password

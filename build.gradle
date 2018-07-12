@@ -19,6 +19,9 @@ group = 'io.github.nebubit'
 version = '0.0.1-SNAPSHOT'
 sourceCompatibility = 1.8
 
+// gradle bootRun -Dspring.profiles.active=local
+bootRun.systemProperties = System.properties
+
 repositories {
 	mavenCentral()
 }
@@ -32,4 +35,5 @@ dependencies {
 	runtime('org.springframework.boot:spring-boot-devtools')
 	runtime('com.h2database:h2')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
+	compile('mysql:mysql-connector-java')
 }
